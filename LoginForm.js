@@ -49,6 +49,7 @@ class LoginForm extends Component {
             marginTop: 5
         };
 
+        // 일부 UI 추가 23.1.31
         return(
             <div>
                 <Navbar>
