@@ -1,8 +1,9 @@
 import React, { Component } from "react"; 
-import { Form, Button } from "react-bootstrap"; 
+import { Form, Button, Navbar, NavLink } from "react-bootstrap"; 
 import axios from "axios";
 import $ from "jquery"; // 로그인 시 화면이 바뀔 수 있도록 쿠키값 있으면 로그인 처리 화면 
 import {} from "jquery.cookie"; 
+import NavbarCollapse from "react-bootstrap/esm/NavbarCollapse";
 axios.defaults.withCredentials = true; 
 // node.js와 통신을 하기 위해 동일 url이어야 하는데 다른 url에도 
 // 접근이 가능하도록 처리하는 부분  
@@ -10,6 +11,10 @@ const headers = { withCredentials: true}; // 통신을 할 때마다 url 접근 
 
 
 class LoginForm extends Component {
+
+    state = {
+        buttonDisplay : "none"
+    };
 
     // 회원가입 실행하는 함수 
     join = () => {
@@ -45,6 +50,25 @@ class LoginForm extends Component {
         };
 
         return(
+            <div>
+                <Navbar>
+                    <Navbar.Brand href="/">Today I Learned</Navbar.Brand>
+                    <Navbar.Toggle/>
+                    <Navbar.Collapse className="justify-content-end">
+                        <NavLink to="/">
+                            <Button style={buttonStyle} variant="primary">글 목록</Button>
+                        </NavLink>
+                        <NavLink to="/boardWrite">
+                            <Button stlye={buttonStyle} variant="primary">글 쓰기</Button>
+                        </NavLink>
+                        <Button stlye={buttonStyle} onClick={this.logout} variant="primary">
+                            로그아웃
+                        </Button>
+                        </Navbar.Collapse>
+                </Navbar>
+                    <Image src="./img/main.png" fluid/>
+            </div>
+        );
             <Form>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>Email address</Form.Label>
