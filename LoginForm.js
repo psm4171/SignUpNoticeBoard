@@ -40,7 +40,7 @@ class LoginForm extends Component {
             });
     }; 
     
-    // css style 부분 
+    // css style 부분은 render() 안에 
     render() {
         const fromStyle={
             margin: 50
@@ -49,8 +49,63 @@ class LoginForm extends Component {
             marginTop: 5
         };
 
-        // 일부 UI 추가 23.1.31
         return(
+            <Form style={formStyle}>
+        
+                <Form.Group controlId="joinForm">
+                    <Form.Label>Email address</Form.Label>
+                    <Form.Control
+                        type="email"
+                        ref={ref => (this.joinEmail = ref)}
+                        placeholder="Enter email"
+                    />
+                    <Form.Text className="text-muted">
+                        귀하의 이메일은 다른 사람과 공유되지 않습니다.
+                    </Form.Text>
+                    <Form.Label>name</Form.Label>
+                    <Form.Control
+                        type="text"
+                        ref={ref => (this.joinName = ref)}
+                        placeholder="name"
+                    />
+                    <Form.Control
+                        type="password"
+                        ref={ref => (this.joinPw = ref)}
+                        placeholder="Password"
+                    />
+                    <Button style={buttonStyle} onClick={this.join} variant="primary" type="button" block>
+                        회원가입 
+                    </Button>
+                    </Form.Group>
+
+
+                    <Form.Group controlId="loginForm">
+                        <Form.Label>Email address</Form.Label>
+                    <Form.Control
+                        type="email"
+                        ref={ref => (this.loginEmail = ref)}
+                        placeholder="Enter email"
+                    />
+                    <Form.Label>Password</Form.Label>
+                    <Form.Control
+                        type="password"
+                        ref={ref => (this.joinPw = ref)}
+                        placeholder="Password"
+                    />
+                    <Button style={buttonStyle} onClick={this.join} variant="primary" type="button" block>
+                        로그인 
+                    </Button>
+                    </Form.Group>
+                    </Form>
+        );
+    }
+}
+
+export default LoginForm;
+
+
+
+/*
             <div>
                 <Navbar>
                     <Navbar.Brand href="/">Today I Learned</Navbar.Brand>
@@ -118,3 +173,4 @@ class LoginForm extends Component {
 
     }
 }
+*/
