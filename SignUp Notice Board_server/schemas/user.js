@@ -5,13 +5,13 @@ const {Schema} = mongoose;
 const userSchema = new Schema({
     email: {
         type: String,
-        required: true, 
-        unique: true 
+        required: true, // not null
+        unique: true // 이메일 필드는 고유한 값을 갖는다는 것
     },
     
     name: {
         type: String,
-        require: true
+        required: true
     },
 
     password: {
@@ -25,4 +25,4 @@ const userSchema = new Schema({
     }
 });
 
-module.exports = mongoose.model("User", userShema); 
+module.exports = mongoose.model("User", userSchema); 
