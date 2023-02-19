@@ -7,3 +7,4 @@
 - npm i react-bootstrap
 - npm i nodemon : 서버 구동을 위한 프레임워크 
 - npm i express : 서버를 만들기 위한 프레임워크 express 
+- npm i react-router-dom : route 렌더링 활용 
