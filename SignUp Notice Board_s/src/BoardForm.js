@@ -10,8 +10,30 @@ const headers = { withCredentials: true};
 
 class BoardRow extends Component{
 
+    state = {
+        board: []
+    };
+
+    getBoard = _id => {
+        const send_param = {
+            headers,
+            _id
+        };
+
+        axios   
+            .post("http://localhost:8080/board/detail", send_param)
+            .then(returnData => {
+                if ( returnData.data.board[0]){
+                    const board = (
+                        <Table striped bordered hover>
 
 
+                            
+                        </Table>
+                    )
+                }
+            })
+    }
 
     redner(){
 
