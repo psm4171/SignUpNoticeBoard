@@ -15,7 +15,7 @@ class BoardDetail extends Component {
         if(this.props.location.query !== undefined){
             this.getDetail();
         }else {
-            window.location.href="/";
+            window.location.href="/"; // 메인 페이지로 이동, 로그인 하는 창으로 이동 
         }
     }
 
@@ -38,6 +38,7 @@ class BoardDetail extends Component {
             }
     };
     
+    // 글의 세부적인 내용을 조회 
     getDetail = () => {
         const send_param = {
             headers, 
