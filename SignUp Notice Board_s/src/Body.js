@@ -1,10 +1,9 @@
 // 주기능 구현 부분 : 로그인과 회원가입 화면이 바뀌는 부
 import React, { Component } from "react"; 
 import LoginForm from "./LoginForm"; 
-// 아직 미구현 상태 
-//import BoardForm from "./BoardForm"; 
-//import BoardWriteForm from "./BoardWriteForm"; 
-//import BoardDetail from "./BoardDetail"; 
+import BoardForm from "./BoardForm"; 
+import BoardWriteForm from "./BoardWriteForm"; 
+import BoardDetail from "./BoardDetail"; 
 import { Route } from "react-router-dom"; 
 import $ from "jquery";
 import {} from "jquery.cookie"; 
@@ -20,11 +19,13 @@ class Body extends Component {
                 resulForm = <Route exact path="/" component={BoardForm}> </Route>; 
                 return resultForm; 
             }else{
-                resultForm = <Route exact path="/" component={loginForm}></Route>;
+                resultForm = <Route exact path="/" component={LoginForm}></Route>;
                 return resultForm;
             }
         }
         getResultForm();
+
+        // path를 통해 컴포넌트를 렌더링 
         return(
             <div>
                 <Route path="/boardWrite" component={BoardWriteForm}></Route> 
