@@ -2,14 +2,13 @@ const mongoose = require("mongoose");
 // 몽구스를 사용하는 이유 : 강제 스키마 사용이 가능 
 // 편리한 쿼리 
 
-
 module.exports = () => {
     const connect = () => {
         if (process.env.NODE_ENV !== "production"){
             mongoose.set("debug", true);
         } 
         mongoose.connect(
-            "mongoose://localhost:27017/til", // mongo DB인 til을 사용
+            "mongodb://localhost:27017/til", // mongo DB인 til을 사용
             {
                 dbName: "til"
             },
@@ -37,6 +36,4 @@ module.exports = () => {
     require("./user"); 
     require("./board");   
 
-
-
-}
+};
