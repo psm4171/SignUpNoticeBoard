@@ -7,6 +7,8 @@
 - npm i react-bootstrap
 - npm i nodemon : 서버 구동을 위한 프레임워크 
 - npm i express : 서버를 만들기 위한 프레임워크 express 
+- npm i express-session
+- npm i mongoose : 몽고디비 사용을 위
 - npm i react-router-dom : route 렌더링 활용 
 
 LoginForm에서 로그인 설정(이름, 비밀번호, 이메일)을 통해 새로고침 되면, Body로 이동 후 쿠키값을 통해 BoardForm으로 이동할지, LoginForm으로 이동할지를 결정 
