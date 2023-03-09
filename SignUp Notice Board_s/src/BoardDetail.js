@@ -5,9 +5,10 @@ import axios from "axios";
 axios.defaults.withCredentials = true;
 const headers = { withCredentials: true};
 
+// 게시글을 조회, 수정, 삭제하는 부분 
 class BoardDetail extends Component {
     state = {
-        board: []
+        board: [] // 배열 전역변수를 생성 
     }; 
 
     // 생명주기에서 렌더링이 다 되었을 때 호출되는 함수 
@@ -76,7 +77,7 @@ class BoardDetail extends Component {
                                         <Button 
                                             onClick={this.deleteBoard.bind(
                                                 null, 
-                                                this.props.location.query._id
+                                                this.props.location.query._id // 파라미터에 id값을 넘겨주면서 삭제 기능 
                                                 )}
                                                 >
                                                     글 삭제 
@@ -97,11 +98,12 @@ class BoardDetail extends Component {
 
     };
 
+    // 변경이 있을때마다 return 값 세팅 
     render() {
         const divStyle = {
             margin: 50
         }; 
-        return <div style={divStyle}> {this.state.board}</div>
+        return <div style={divStyle}> {this.state.board}</div>;
     }
 }
 
